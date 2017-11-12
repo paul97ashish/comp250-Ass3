@@ -103,6 +103,12 @@ public class TesterA3starter
 		System.out.println("a = " + WordTree.getListPrefixMatches("a"));
 		System.out.println("do = " + WordTree.getListPrefixMatches("do"));
 		System.out.println("c = " + WordTree.getListPrefixMatches("c"));
+        System.out.println(" = " + WordTree.getListPrefixMatches(" ").size());
+		
+	    System.out.println("a = " + WordTree.getListPrefixMatches("a").size());
+	    System.out.println("do = " + WordTree.getListPrefixMatches("do").size());
+	    System.out.println("c = " + WordTree.getListPrefixMatches("c").size());
+		
 
 	}
 }

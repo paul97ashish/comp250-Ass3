@@ -105,18 +105,32 @@ public class WordTree {
         WordTreeNode prefNode = getPrefixNode(prefix);
         ArrayList<String> words = new ArrayList<String>();
         if (prefNode.getDepth() == prefix.length()){
-            if (prefNode.isEndOfWord()){
-                words.add(prefNode.toString());
-            }
-            
-            for(int x = 0; x < WordTreeNode.NUMCHILDREN ; x++ ){
-                if (prefNode.getChild((char) x) != null){
-                    
-                }
+            theRecursion(prefNode, words);
+        }
+                  
+  
+        
+        return words;
+        // ADD YOUR CODE ABOVE HERE
+    }
+    
+    // Helper method
+    
+    // This method helps with the getprefixmatches. It uses recursion to traverse 
+    // through the tree and find the words/leafs.
+    
+    public void theRecursion(WordTreeNode prefNode, ArrayList<String> words){
+        
+        if (prefNode.isEndOfWord() ){
+            words.add(prefNode.toString());
+        }
+        
+        for ( int j = 0 ; j < WordTreeNode.NUMCHILDREN ; j++){
+            if(prefNode.getChild((char) j) != null){
+                theRecursion(prefNode.getChild((char) j), words);
             }
         }
-
-        // ADD YOUR CODE ABOVE HERE
+        
     }
 
     /*
@@ -252,7 +266,9 @@ public class WordTree {
 
             // ADD YOUR CODE ABOVE HERE
         }
-
+        
+        //Helper Methods
+        
         // This is my helper method to return the depth. There may be a simpler
         // way to do this is but i did not bother to google it so please forgive
         // me
@@ -260,5 +276,7 @@ public class WordTree {
             return depth;
         }
     }
-
 }
+
+        
+   
