@@ -117,7 +117,7 @@ public class WordTree {
     // Helper method
     
     // This method helps with the getprefixmatches. It uses recursion to traverse 
-    // through the tree and find the words/leafs.
+    // through the tree and find the words/leafs. 
     
     public void theRecursion(WordTreeNode prefNode, ArrayList<String> words){
         
